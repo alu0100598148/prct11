@@ -35,7 +35,7 @@ class MatrizDispersa < Matriz
   
   def coerce(matriz)
     [self, matriz]
-  end 
+  end
 
   def to_s
     matString = ""
@@ -90,7 +90,7 @@ class MatrizDispersa < Matriz
     det
   end
 
-  def x(escalar)                #multiplicacion por un escalar
+  def x(escalar) #multiplicacion por un escalar
     aux = MatrizDispersa.new(@nFil, @mCol, @matriz)
     (@nFil).times do |i|
       (@mCol).times do |j|

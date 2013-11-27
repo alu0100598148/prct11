@@ -1,3 +1,24 @@
+# = matrizDensa.rb
+#
+# Autor::   Oliver Valido Ramos, Rodrigo Colombo Vlaeminch
+# Web::     https://github.com/alu0100598148/prct11
+#
+# === Clase Matriz Densa
+#
+# Definición de la clase _MatrizDensa_ compuesta por
+# * metodo initialize
+# * metodo to_s
+# * metodo det
+# * metodo tras
+# * metodo x
+# * metodo +
+# * metodo -
+# * metodo *
+# * metodo <=>
+# * metodo max
+# * metodo min
+#
+
 #! /usr/local/ruby/bin/ruby 
 # require 'racional.rb'
 require 'matriz.rb'
@@ -73,7 +94,7 @@ class MatrizDensa < Matriz
     aux
   end
 
-  #Metodo apra sumar dos matrices
+  #Metodo para sumar dos matrices
   def +(mat)
     if (mat.nFil == @nFil && mat.mCol == @mCol)
       aux = MatrizDensa.new(@matriz)
