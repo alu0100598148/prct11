@@ -1,3 +1,23 @@
+# = matriz.rb
+#
+# Autor::   Oliver Valido Ramos, Rodrigo Colombo Vlaeminch
+#
+# === Clase Matriz
+#
+# Definición de la clase _Matriz_ compuesta por
+# * metodo initialize
+# * metodo coerce
+# * metodo +
+# * metodo -
+# * metodo *
+# * metodo x
+# * metodo max
+# * metodo min
+# * metodo <=>
+# * metodo det
+# * metodo tras
+# * metodo to_s
+#
 require 'racional'
 
 class Matriz
