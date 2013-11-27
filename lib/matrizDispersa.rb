@@ -1,3 +1,24 @@
+# = matrizDispersa.rb
+#
+# Autor:: Oliver Valido Ramos, Rodrigo Colombo Vlaeminch
+# Web:: https://github.com/alu0100598148/prct11
+#
+# === Clase MatrizDispersa
+#
+# Definición de la clase _MatrizDispersa_ compuesta por
+# * metodo initialize
+# * metodo coerce
+# * metodo to_s
+# * metodo tras
+# * metodo det
+# * metodo x
+# * metodo +
+# * metodo -
+# * metodo *
+# * metodo <=>
+# * metodo max
+# * metodo min
+# * metodo to_dispersa
 
 require 'matriz.rb'
 require 'matrizDensa.rb'
@@ -14,12 +35,12 @@ class MatrizDispersa < Matriz
   
   def coerce(matriz)
     [self, matriz]
-  end 
+  end
 
   def to_s
     matString = ""
-    for i in 0...@nFil do
-      for j in 0...@mCol do
+    (@nFil).times do |i|
+      (@mCol).times do |j|
         if ((!@matriz[i].nil?) && (!@matriz[i][j].nil?))
           matString = matString + @matriz[i][j].to_s + " "
         else
@@ -69,10 +90,10 @@ class MatrizDispersa < Matriz
     det
   end
 
-  def x(escalar)                #multiplicacion por un escalar
+  def x(escalar) #multiplicacion por un escalar
     aux = MatrizDispersa.new(@nFil, @mCol, @matriz)
-    for i in 0...@nFil do
-      for j in 0...@mCol do
+    (@nFil).times do |i|
+      (@mCol).times do |j|
         if ((!@matriz[i].nil?) && (!@matriz[i][j].nil?))
           aux.matriz[i][j] = @matriz[i][j] * escalar
         end
@@ -84,41 +105,41 @@ class MatrizDispersa < Matriz
   def +(mat)
     if (mat.nFil == @nFil && mat.mCol == @mCol)
       result = Array.new
-      for i in 0...@nFil do
+      (@nFil).times do |i|
         result[i] = Array.new
-        for j in 0...@mCol do
+        (@mCol).times do |j|
           result[i][j] = 0
         end
       end
       aux = MatrizDensa.new(result)
       nElementos = 0
       if (mat.class == MatrizDispersa)
-      for i in 0...@nFil do
-        for j in 0...@mCol do
-          if ((!@matriz[i].nil?) && (!@matriz[i][j].nil?) && (!mat.matriz[i].nil?) && (!mat.matriz[i][j].nil?))
-            aux.matriz[i][j] = @matriz[i][j] + mat.matriz[i][j]
-            nElementos += 1
-          elsif ((!@matriz[i].nil?) && (!@matriz[i][j].nil?) && ((mat.matriz[i].nil?) || ((!mat.matriz[i].nil?) && mat.matriz[i][j].nil?)))
-            aux.matriz[i][j] = @matriz[i][j]
-            nElementos += 1
-          elsif ((!mat.matriz[i].nil?) && (!mat.matriz[i][j].nil?) && ((@matriz[i].nil?) || ((!@matriz[i].nil?) && @matriz[i][j].nil?)))
-            aux.matriz[i][j] = mat.matriz[i][j]
-            nElementos += 1
+        (@nFil).times do |i|
+          (@mCol).times do |j|
+            if ((!@matriz[i].nil?) && (!@matriz[i][j].nil?) && (!mat.matriz[i].nil?) && (!mat.matriz[i][j].nil?))
+              aux.matriz[i][j] = @matriz[i][j] + mat.matriz[i][j]
+              nElementos += 1
+            elsif ((!@matriz[i].nil?) && (!@matriz[i][j].nil?) && ((mat.matriz[i].nil?) || ((!mat.matriz[i].nil?) && mat.matriz[i][j].nil?)))
+              aux.matriz[i][j] = @matriz[i][j]
+              nElementos += 1
+            elsif ((!mat.matriz[i].nil?) && (!mat.matriz[i][j].nil?) && ((@matriz[i].nil?) || ((!@matriz[i].nil?) && @matriz[i][j].nil?)))
+              aux.matriz[i][j] = mat.matriz[i][j]
+              nElementos += 1
+            end
           end
         end
-      end
       elsif (mat.class == MatrizDensa)
-      for i in 0...@nFil do
-        for j in 0...@mCol do
-          if ((!@matriz[i].nil?) && (!@matriz[i][j].nil?))
-            aux.matriz[i][j] = @matriz[i][j] + mat.matriz[i][j]
-            nElementos += 1
-          elsif ((@matriz[i].nil?) || ((!@matriz[i].nil?) && @matriz[i][j].nil?))
-            aux.matriz[i][j] = mat.matriz[i][j]
-            nElementos += 1
+        (@nFil).times do |i|
+          (@mCol).times do |j|
+            if ((!@matriz[i].nil?) && (!@matriz[i][j].nil?))
+              aux.matriz[i][j] = @matriz[i][j] + mat.matriz[i][j]
+              nElementos += 1
+            elsif ((@matriz[i].nil?) || ((!@matriz[i].nil?) && @matriz[i][j].nil?))
+              aux.matriz[i][j] = mat.matriz[i][j]
+              nElementos += 1
+            end
           end
         end
-      end
       end
       if ((@nFil * @mCol) * 0.4 > nElementos)
         aux = to_dispersa(aux)
@@ -132,41 +153,41 @@ class MatrizDispersa < Matriz
   def -(mat)
     if (mat.nFil == @nFil && mat.mCol == @mCol)
       result = Array.new
-      for i in 0...@nFil do
+      (@nFil).times do |i|
         result[i] = Array.new
-        for j in 0...@mCol do
+        (@mCol).times do |j|
           result[i][j] = 0
         end
       end
       aux = MatrizDensa.new(result)
       nElementos = 0
       if (mat.class == MatrizDispersa)
-      for i in 0...@nFil do
-        for j in 0...@mCol do
-          if ((!@matriz[i].nil?) && (!@matriz[i][j].nil?) && (!mat.matriz[i].nil?) && (!mat.matriz[i][j].nil?))
-            aux.matriz[i][j] = @matriz[i][j] - mat.matriz[i][j]
-            nElementos += 1
-          elsif ((!@matriz[i].nil?) && (!@matriz[i][j].nil?) && ((mat.matriz[i].nil?) || ((!mat.matriz[i].nil?) && mat.matriz[i][j].nil?)))
-            aux.matriz[i][j] = @matriz[i][j]
-            nElementos += 1
-          elsif ((!mat.matriz[i].nil?) && (!mat.matriz[i][j].nil?) && ((@matriz[i].nil?) || ((!@matriz[i].nil?) && @matriz[i][j].nil?)))
-            aux.matriz[i][j] = - mat.matriz[i][j]
-            nElementos += 1
+        (@nFil).times do |i|
+          (@mCol).times do |j|
+            if ((!@matriz[i].nil?) && (!@matriz[i][j].nil?) && (!mat.matriz[i].nil?) && (!mat.matriz[i][j].nil?))
+              aux.matriz[i][j] = @matriz[i][j] - mat.matriz[i][j]
+              nElementos += 1
+            elsif ((!@matriz[i].nil?) && (!@matriz[i][j].nil?) && ((mat.matriz[i].nil?) || ((!mat.matriz[i].nil?) && mat.matriz[i][j].nil?)))
+              aux.matriz[i][j] = @matriz[i][j]
+              nElementos += 1
+            elsif ((!mat.matriz[i].nil?) && (!mat.matriz[i][j].nil?) && ((@matriz[i].nil?) || ((!@matriz[i].nil?) && @matriz[i][j].nil?)))
+              aux.matriz[i][j] = - mat.matriz[i][j]
+              nElementos += 1
+            end
           end
         end
-      end
       elsif (mat.class == MatrizDensa)
-      for i in 0...@nFil do
-        for j in 0...@mCol do
-          if ((!@matriz[i].nil?) && (!@matriz[i][j].nil?))
-            aux.matriz[i][j] = @matriz[i][j] - mat.matriz[i][j]
-            nElementos += 1
-          elsif ((@matriz[i].nil?) || ((!@matriz[i].nil?) && @matriz[i][j].nil?))
-            aux.matriz[i][j] = - mat.matriz[i][j]
-            nElementos += 1
+        (@nFil).times do |i|
+          (@mCol).times do |j|
+            if ((!@matriz[i].nil?) && (!@matriz[i][j].nil?))
+              aux.matriz[i][j] = @matriz[i][j] - mat.matriz[i][j]
+              nElementos += 1
+            elsif ((@matriz[i].nil?) || ((!@matriz[i].nil?) && @matriz[i][j].nil?))
+              aux.matriz[i][j] = - mat.matriz[i][j]
+              nElementos += 1
+            end
           end
         end
-      end
       end
 
       if ((@nFil * @mCol) * 0.4 > nElementos)
@@ -181,36 +202,36 @@ class MatrizDispersa < Matriz
   def *(mat)
     if (@mCol == mat.nFil)
       result = Array.new
-      for i in 0...@nFil do
+      (@nFil).times do |i|
         result[i] = Array.new
-        for j in 0...@mCol do
+        (@mCol).times do |j|
           result[i][j] = 0
         end
       end
       aux = MatrizDensa.new(result)
       nElementos = 0
       if (mat.class == MatrizDispersa)
-      for i in 0...@nFil do
-        for j in 0...mat.mCol do
-          for z in 0...@mCol do
-            if ((!@matriz[i].nil?) && (!@matriz[i][z].nil?) && (!mat.matriz[z].nil?) && (!mat.matriz[z][j].nil?))
-              aux.matriz[i][j] += @matriz[i][z] * mat.matriz[z][j]
-              nElementos += 1
+        (@nFil).times do |i|
+          (mat.mCol).times do |j|
+            (@mCol).times do |z|
+              if ((!@matriz[i].nil?) && (!@matriz[i][z].nil?) && (!mat.matriz[z].nil?) && (!mat.matriz[z][j].nil?))
+                aux.matriz[i][j] += @matriz[i][z] * mat.matriz[z][j]
+                nElementos += 1
+              end
             end
           end
         end
-      end
       else
-      for i in 0...@nFil do
-        for j in 0...mat.mCol do
-          for z in 0...@mCol do
-            if ((!@matriz[i].nil?) && (!@matriz[i][z].nil?))
-              aux.matriz[i][j] += @matriz[i][z] * mat.matriz[z][j]
-              nElementos += 1
+        (@nFil).times do |i|
+          (mat.mCol).times do |j|
+            (@mCol).times do |z|
+              if ((!@matriz[i].nil?) && (!@matriz[i][z].nil?))
+                aux.matriz[i][j] += @matriz[i][z] * mat.matriz[z][j]
+                nElementos += 1
+              end
             end
           end
         end
-      end
       end
       if ((@nFil * @mCol) * 0.4 > nElementos)
         aux = to_dispersa(aux)
