@@ -12,14 +12,10 @@ class MatrizDensa < Matriz
     @matriz = matriz
   end
 
- # def coerce(matriz)
-#    [self, matriz]
-#  end
-
   def to_s
     matString = ""
-    for i in 0...@nFil do
-      for j in 0...@mCol do
+    (@nFil).times do |i|
+      (@mCol).times do |j|
         matString = matString + @matriz[i][j].to_s + " "
       end
       matString = matString + "\n"
@@ -32,7 +28,7 @@ class MatrizDensa < Matriz
     if (@nFil == @mCol)
     det = @matriz[0][0]
     aux = MatrizDensa.new(@matriz)
-    for k in 0...@nFil do
+    for k in 0...@nFil do 
       l = k+1
       for i in l...@mCol do
         for j in l...@mCol do
@@ -50,16 +46,16 @@ class MatrizDensa < Matriz
   # Método apra calcular la traspuesta de una matriz
   def tras
     result = Array.new
-      for i in 0...@nFil do
+      (@nFil).times do |i|
         result[i] = Array.new
-        for j in 0...@mCol do
+        (@mCol).times do |j|
           result[i][j] = 0
         end
       end
 
     aux = MatrizDensa.new(result)
-    for i in 0...@nFil do
-      for j in 0...@mCol do
+    (@nFil).times do |i|
+      (@mCol).times do |j|
         aux.matriz[i][j] = @matriz[j][i]
       end
     end
@@ -69,8 +65,8 @@ class MatrizDensa < Matriz
   # Metodo para multiplicar una matriz por un escalar
   def x(escalar)
     aux = MatrizDensa.new(@matriz)
-    for i in 0...@nFil do
-      for j in 0...@mCol do
+    (@nFil).times do |i|
+      (@mCol).times do |j|
         aux.matriz[i][j] = @matriz[i][j] * escalar
       end
     end
@@ -81,8 +77,8 @@ class MatrizDensa < Matriz
   def +(mat)
     if (mat.nFil == @nFil && mat.mCol == @mCol)
       aux = MatrizDensa.new(@matriz)
-      for i in 0...@nFil do
-        for j in 0...@mCol do
+      (@nFil).times do |i|
+        (@mCol).times do |j|
           aux.matriz[i][j] = @matriz[i][j] + mat.matriz[i][j]
         end
       end
@@ -96,8 +92,8 @@ class MatrizDensa < Matriz
   def -(mat)
     if (mat.nFil == @nFil && mat.mCol == @mCol)
       aux = MatrizDensa.new(@matriz)
-      for i in 0...@nFil do
-        for j in 0...@mCol do
+      (@nFil).times do |i|
+        (@mCol).times do |j|
           aux.matriz[i][j] = @matriz[i][j] - mat.matriz[i][j]
         end
       end
@@ -111,9 +107,9 @@ class MatrizDensa < Matriz
   def *(mat)
     if (@mCol == mat.nFil)
       result = Array.new
-      for i in 0...@nFil do
+      (@nFil).times do |i|
         result[i] = Array.new
-        for j in 0...mat.mCol do
+        (mat.mCol).times do |j|
           if (mat.matriz[0][0].class == Fraccion)
            result[i][j] = Fraccion.new(0, 1)
           else
@@ -124,9 +120,9 @@ class MatrizDensa < Matriz
 
       aux = MatrizDensa.new(result)
 
-      for i in 0...@nFil do
-        for j in 0...mat.mCol do
-          for z in 0...@mCol do
+      (@nFil).times do |i|
+        (mat.mCol).times do |j|
+          (@mCol).times do |z|
             aux.matriz[i][j] += @matriz[i][z] * mat.matriz[z][j]
           end
         end
