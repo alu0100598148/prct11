@@ -1,3 +1,24 @@
+# = matrizDispersa.rb
+#
+# Autor::   Oliver Valido Ramos, Rodrigo Colombo Vlaeminch
+# Web::     https://github.com/alu0100598148/prct11
+#
+# === Clase MatrizDispersa
+#
+# Definición de la clase _MatrizDispersa_ compuesta por
+# * metodo initialize
+# * metodo coerce
+# * metodo to_s
+# * metodo tras
+# * metodo det
+# * metodo x
+# * metodo +
+# * metodo -
+# * metodo *
+# * metodo <=>
+# * metodo max
+# * metodo min
+# * metodo to_dispersa
 
 require 'matriz.rb'
 require 'matrizDensa.rb'
