@@ -199,5 +199,16 @@ class MatrizDensa < Matriz
     end
     mini
   end
+
+  def encontrar
+    (@nFil).times do |i|
+      (@mCol).times do |j|
+        if(yield(@matriz[i][j]))
+          return i, j
+        end
+      end
+    end
+    return nil
+  end
 end
 

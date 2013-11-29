@@ -96,5 +96,10 @@ describe Matriz do
       (@md2.min.should == 0)
     end
   end
-
+   
+  describe "Modificacion" do
+    it "Se debe pasar la posicion en la que un elemento al cuadrado es mayor que 6" do
+      ((@m3.encontrar {|e| e*e > 6}).should == [1,0])
+    end
+  end
 end
