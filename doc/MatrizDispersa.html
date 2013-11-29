@@ -244,13 +244,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para multiplicar dos matrices</p>
           
           
 
           
           <div class="method-source-code" id="2A-source">
-            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 202</span>
+            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 209</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">mat</span>)
   <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@mCol</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">mat</span>.<span class="ruby-identifier">nFil</span>)
     <span class="ruby-identifier">result</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
@@ -316,13 +316,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para sumar dos matrices</p>
           
           
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 105</span>
+            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 110</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">mat</span>)
   <span class="ruby-keyword">if</span> (<span class="ruby-identifier">mat</span>.<span class="ruby-identifier">nFil</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@nFil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">mat</span>.<span class="ruby-identifier">mCol</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@mCol</span>)
     <span class="ruby-identifier">result</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
@@ -393,13 +393,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para restar dos matrices</p>
           
           
 
           
           <div class="method-source-code" id="2D-source">
-            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 153</span>
+            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 159</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">mat</span>)
   <span class="ruby-keyword">if</span> (<span class="ruby-identifier">mat</span>.<span class="ruby-identifier">nFil</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@nFil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">mat</span>.<span class="ruby-identifier">mCol</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@mCol</span>)
     <span class="ruby-identifier">result</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
@@ -471,13 +471,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo que permite comparar dos matrices</p>
           
           
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 245</span>
+            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 253</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">mat</span>)
   <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@nFil</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">mat</span>.<span class="ruby-identifier">nFil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@mCol</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">mat</span>.<span class="ruby-identifier">mCol</span>)
     <span class="ruby-identifier">comparacion</span> = <span class="ruby-value">0</span>
@@ -564,13 +564,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para obtener el determinante de una matriz</p>
           
           
 
           
           <div class="method-source-code" id="det-source">
-            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 70</span>
+            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 73</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">det</span>
   <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@nFil</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@mCol</span>)
     <span class="ruby-keyword">if</span> ((<span class="ruby-operator">!</span><span class="ruby-ivar">@matriz</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">nil?</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-operator">!</span><span class="ruby-ivar">@matriz</span>[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>].<span class="ruby-identifier">nil?</span>))
@@ -616,13 +616,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para calcular el maximo elemento de una matriz</p>
           
           
 
           
           <div class="method-source-code" id="max-source">
-            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 276</span>
+            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 285</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">max</span>
   <span class="ruby-identifier">maxi</span> = <span class="ruby-value">0</span>
   <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@nFil</span> <span class="ruby-keyword">do</span>
@@ -659,13 +659,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para calcular el minimo elemento de una matriz</p>
           
           
 
           
           <div class="method-source-code" id="min-source">
-            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 290</span>
+            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 300</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">min</span>
   <span class="ruby-identifier">mini</span> = <span class="ruby-value">0</span>
   <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@nFil</span> <span class="ruby-keyword">do</span>
@@ -702,13 +702,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para pasar una matriz densa a una dispersa</p>
           
           
 
           
           <div class="method-source-code" id="to_dispersa-source">
-            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 304</span>
+            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 315</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_dispersa</span>(<span class="ruby-identifier">matDen</span>)
   <span class="ruby-identifier">result</span> = {}
   <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">matDen</span>.<span class="ruby-identifier">nFil</span> <span class="ruby-keyword">do</span>
@@ -746,13 +746,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para pasar la matriz a formato string</p>
           
           
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 40</span>
+            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
   <span class="ruby-identifier">matString</span> = <span class="ruby-string">&quot;&quot;</span>
   (<span class="ruby-ivar">@nFil</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
@@ -790,13 +790,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para obtener la traspuesta de una matriz</p>
           
           
 
           
           <div class="method-source-code" id="tras-source">
-            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 55</span>
+            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">tras</span>
   <span class="ruby-identifier">aux</span> = <span class="ruby-constant">MatrizDispersa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@mCol</span>, <span class="ruby-ivar">@nFil</span>, {})
   <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@nFil</span> <span class="ruby-keyword">do</span>
@@ -834,13 +834,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para multiplicar un escalar por una matriz</p>
           
           
 
           
           <div class="method-source-code" id="x-source">
-            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 93</span>
+            <pre><span class="ruby-comment"># File lib/matrizDispersa.rb, line 97</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">x</span>(<span class="ruby-identifier">escalar</span>) <span class="ruby-comment">#multiplicacion por un escalar</span>
   <span class="ruby-identifier">aux</span> = <span class="ruby-constant">MatrizDispersa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@nFil</span>, <span class="ruby-ivar">@mCol</span>, <span class="ruby-ivar">@matriz</span>)
   (<span class="ruby-ivar">@nFil</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>

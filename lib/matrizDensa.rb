@@ -32,7 +32,8 @@ class MatrizDensa < Matriz
     @mCol = matriz[0].size
     @matriz = matriz
   end
-
+  
+  # Metodo para obtener la matriz en formato string
   def to_s
     matString = ""
     (@nFil).times do |i|
@@ -64,7 +65,7 @@ class MatrizDensa < Matriz
     det
   end
 
-  # Método apra calcular la traspuesta de una matriz
+  # Método para calcular la traspuesta de una matriz
   def tras
     result = Array.new
       (@nFil).times do |i|
@@ -154,6 +155,7 @@ class MatrizDensa < Matriz
     aux
   end
 
+  # Metodo que nos permite comparar dos matrices
   def <=>(matriz)
     if (@nFil == matriz.nFil && @mCol == matriz.mCol)
       comparacion = 0
@@ -171,6 +173,7 @@ class MatrizDensa < Matriz
     comparacion
   end
 
+  # Metodo para saber el maximo elemento de la matriz
   def max
     maxi = @matriz[0][0]
     for i in 0...@nFil do
@@ -184,6 +187,7 @@ class MatrizDensa < Matriz
     maxi
   end
 
+  # Metodo para saber el minimo elemento de la matriz
   def min
     mini = @matriz[0][0]
     for i in 0...@nFil do

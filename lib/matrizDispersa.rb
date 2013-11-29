@@ -37,6 +37,7 @@ class MatrizDispersa < Matriz
     [self, matriz]
   end
 
+  # Metodo para pasar la matriz a formato string
   def to_s
     matString = ""
     (@nFil).times do |i|
@@ -52,6 +53,7 @@ class MatrizDispersa < Matriz
     matString
   end
   
+  # Metodo para obtener la traspuesta de una matriz
   def tras
     aux = MatrizDispersa.new(@mCol, @nFil, {})
     for i in 0...@nFil do
@@ -67,6 +69,7 @@ class MatrizDispersa < Matriz
     aux
   end
 
+  # Metodo para obtener el determinante de una matriz
   def det
     if (@nFil == @mCol)
       if ((!@matriz[0].nil?) && (!@matriz[0][0].nil?))
@@ -90,6 +93,7 @@ class MatrizDispersa < Matriz
     det
   end
 
+  # Metodo para multiplicar un escalar por una matriz
   def x(escalar) #multiplicacion por un escalar
     aux = MatrizDispersa.new(@nFil, @mCol, @matriz)
     (@nFil).times do |i|
@@ -102,6 +106,7 @@ class MatrizDispersa < Matriz
     aux
   end
   
+  # Metodo para sumar dos matrices
   def +(mat)
     if (mat.nFil == @nFil && mat.mCol == @mCol)
       result = Array.new
@@ -150,6 +155,7 @@ class MatrizDispersa < Matriz
     aux
   end
 
+  # Metodo para restar dos matrices
   def -(mat)
     if (mat.nFil == @nFil && mat.mCol == @mCol)
       result = Array.new
@@ -199,6 +205,7 @@ class MatrizDispersa < Matriz
     aux
   end
 
+  # Metodo para multiplicar dos matrices
   def *(mat)
     if (@mCol == mat.nFil)
       result = Array.new
@@ -242,6 +249,7 @@ class MatrizDispersa < Matriz
     aux
   end
 
+  # Metodo que permite comparar dos matrices
   def <=>(mat)
     if (@nFil == mat.nFil && @mCol == mat.mCol)
       comparacion = 0
@@ -273,6 +281,7 @@ class MatrizDispersa < Matriz
     comparacion
   end
 
+  # Metodo para calcular el maximo elemento de una matriz
   def max
     maxi = 0
     for i in 0...@nFil do
@@ -287,6 +296,7 @@ class MatrizDispersa < Matriz
     maxi
   end
 
+  # Metodo para calcular el minimo elemento de una matriz
   def min
     mini = 0
     for i in 0...@nFil do
@@ -301,6 +311,7 @@ class MatrizDispersa < Matriz
     mini
   end
 
+  # Metodo para pasar una matriz densa a una dispersa
   def to_dispersa(matDen)
     result = {}
     for i in 0...matDen.nFil do

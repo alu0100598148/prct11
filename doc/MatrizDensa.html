@@ -246,7 +246,7 @@
 
           
           <div class="method-source-code" id="2A-source">
-            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 128</span>
+            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 129</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">mat</span>)
   <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@mCol</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">mat</span>.<span class="ruby-identifier">nFil</span>)
     <span class="ruby-identifier">result</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
@@ -298,13 +298,13 @@
 
         <div class="method-description">
           
-          <p>Metodo apra sumar dos matrices</p>
+          <p>Metodo para sumar dos matrices</p>
           
           
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 98</span>
+            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 99</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">mat</span>)
   <span class="ruby-keyword">if</span> (<span class="ruby-identifier">mat</span>.<span class="ruby-identifier">nFil</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@nFil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">mat</span>.<span class="ruby-identifier">mCol</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@mCol</span>)
     <span class="ruby-identifier">aux</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@matriz</span>)
@@ -347,7 +347,7 @@
 
           
           <div class="method-source-code" id="2D-source">
-            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 113</span>
+            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 114</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">mat</span>)
   <span class="ruby-keyword">if</span> (<span class="ruby-identifier">mat</span>.<span class="ruby-identifier">nFil</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@nFil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">mat</span>.<span class="ruby-identifier">mCol</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@mCol</span>)
     <span class="ruby-identifier">aux</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@matriz</span>)
@@ -384,13 +384,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo que nos permite comparar dos matrices</p>
           
           
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 157</span>
+            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 159</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">matriz</span>)
   <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@nFil</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">nFil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@mCol</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">matriz</span>.<span class="ruby-identifier">mCol</span>)
     <span class="ruby-identifier">comparacion</span> = <span class="ruby-value">0</span>
@@ -436,7 +436,7 @@
 
           
           <div class="method-source-code" id="det-source">
-            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 48</span>
+            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">det</span>
   <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@nFil</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@mCol</span>)
   <span class="ruby-identifier">det</span> = <span class="ruby-ivar">@matriz</span>[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
@@ -478,13 +478,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para saber el maximo elemento de la matriz</p>
           
           
 
           
           <div class="method-source-code" id="max-source">
-            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 174</span>
+            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 177</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">max</span>
   <span class="ruby-identifier">maxi</span> = <span class="ruby-ivar">@matriz</span>[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
   <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@nFil</span> <span class="ruby-keyword">do</span>
@@ -520,13 +520,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para saber el minimo elemento de la matriz</p>
           
           
 
           
           <div class="method-source-code" id="min-source">
-            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 187</span>
+            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 191</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">min</span>
   <span class="ruby-identifier">mini</span> = <span class="ruby-ivar">@matriz</span>[<span class="ruby-value">0</span>][<span class="ruby-value">0</span>]
   <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@nFil</span> <span class="ruby-keyword">do</span>
@@ -561,13 +561,13 @@
 
         <div class="method-description">
           
-          
+          <p>Metodo para obtener la matriz en formato string</p>
           
           
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 36</span>
+            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
   <span class="ruby-identifier">matString</span> = <span class="ruby-string">&quot;&quot;</span>
   (<span class="ruby-ivar">@nFil</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
@@ -601,13 +601,13 @@
 
         <div class="method-description">
           
-          <p>Método apra calcular la traspuesta de una matriz</p>
+          <p>Método para calcular la traspuesta de una matriz</p>
           
           
 
           
           <div class="method-source-code" id="tras-source">
-            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 68</span>
+            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 69</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">tras</span>
   <span class="ruby-identifier">result</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
     (<span class="ruby-ivar">@nFil</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
@@ -654,7 +654,7 @@
 
           
           <div class="method-source-code" id="x-source">
-            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 87</span>
+            <pre><span class="ruby-comment"># File lib/matrizDensa.rb, line 88</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">x</span>(<span class="ruby-identifier">escalar</span>)
   <span class="ruby-identifier">aux</span> = <span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@matriz</span>)
   (<span class="ruby-ivar">@nFil</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
